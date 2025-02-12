@@ -1,0 +1,16 @@
+<% @restaurant.errors.full_messages.each do |message| %>
+  <p class="text-red-500"><%= message %></p>
+<% end %>
+
+<%= form_with model: @restaurant, class: "min-w-lg max-w-2xl mt-6 flex flex-col" do |f| %>
+  <%= f.label :name%>
+  <%= f.text_field :name, class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"%>
+  <%= f.label :address, class: "mt-4"%>
+  <%= f.text_field :address, class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"%>
+  <%= f.label :phone_number, class: "mt-4"%>
+  <%= f.text_field :phone_number, class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"%>
+  <%= f.label :category, class: "mt-4"%>
+  <%= f.select :category, Restaurant::CATEGORIES , { include_blank: "What kind of restaurant is it?" },
+  { class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" } %>
+  <%= f.submit class: "mt-6 border px-3 py-2 cursor-pointer"%>
+<% end %>

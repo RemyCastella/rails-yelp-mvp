@@ -1,0 +1,12 @@
+
+<% @review.errors.full_messages.each do |message| %>
+  <p class="text-red-500"><%= message %></p>
+<% end %>
+
+<%= form_with model: [@restaurant, @review], class: "mt-6 flex flex-col" do |f| %>
+  <%= f.label :rating %>
+  <%= f.select :rating, (1..5).to_a, { include_blank: "Select a rating" },
+  { class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" } %>  <%= f.label :content, class: "mt-4" %>
+  <%= f.text_area :content, class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"%>
+  <%= f.submit class: "mt-4 border px-3 py-2 cursor-pointer"%>
+<% end %>

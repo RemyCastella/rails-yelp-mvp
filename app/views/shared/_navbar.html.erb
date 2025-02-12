@@ -1,0 +1,12 @@
+<nav class="block w-full px-6 py-2 mx-auto bg-white bg-opacity-90 sticky top-3 shadow lg:px-8 lg:py-3 backdrop-blur-lg backdrop-saturate-150 z-[9999]">
+  <div class="container flex flex-wrap items-center justify-between mx-auto text-slate-800">
+    <%= link_to "Yelp", restaurants_path, class: "text-2xl font-bold"%>
+    <div>
+      <ul class="flex flex-col gap-2 mt-2 mb-4 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
+        <li class="flex items-center p-1 text-sm gap-x-2 text-slate-600">
+          <%= link_to "Add Restaurant", new_restaurant_path, class: "text-bold text-md ml-4 border px-4 py-2 hover:bg-stone-950 hover:text-white"%>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

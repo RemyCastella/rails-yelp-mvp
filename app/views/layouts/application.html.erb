@@ -5,12 +5,19 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
-    <%= yield %>
+  <body class="flex flex-col min-h-screen">
+    <header>
+      <%= render 'shared/navbar' %>
+    </header>
+    <main class="grow flex flex-col items-center">
+      <%= yield %>
+    </main>
+    <footer>
+    </footer>
   </body>
 </html>
